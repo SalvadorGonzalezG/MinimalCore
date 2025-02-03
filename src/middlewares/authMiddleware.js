@@ -5,4 +5,8 @@ export default (req, res, next)=>{
     if(!token){
         return res.status(401).json({message: "Acceso no autorizado: token no proporcionado"})
     }
+    console.log("Token Valido", token);
+    // Si el token es valido continuar con la ejecucion
+    next();
+
 }

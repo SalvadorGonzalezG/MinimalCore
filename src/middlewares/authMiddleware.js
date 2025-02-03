@@ -5,8 +5,13 @@ export default (req, res, next)=>{
     if(!token){
         return res.status(401).json({message: "Acceso no autorizado: token no proporcionado"})
     }
-    console.log("Token Valido", token);
-    // Si el token es valido continuar con la ejecucion
-    next();
+    try{
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    //Agregamos el usuario decodificado al request
+        req.user = decoded;
+        next();
+    }catch(err){
+        res.status(401).json({message: "Token invalido"});
+    }
 
 }

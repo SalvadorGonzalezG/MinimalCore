@@ -1,5 +1,5 @@
 import express from "express";
-import {login} from "../controllers/authController"
+import {login} from "../controllers/authController.js"
 
 // Se crea un enrutador  utilizando express.Router()
 const router = express.Router();

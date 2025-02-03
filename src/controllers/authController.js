@@ -2,7 +2,7 @@
 import jwt from "jsonwebtoken";
 
 // definimos la funcion login que sera exportada para ser utilizada en otros modulos
-export const login = () =>{
+export const login = (req, res) =>{
     // Se extraen las propiedades del cuerpo de la solicitud
     const { username, password } = req.body;
 

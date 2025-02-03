@@ -3,11 +3,11 @@ import routes from "./routes/index.js"
 import dotenv from "dotenv";
 import errorHandler from "./middlewares/errorHandler.js"; //manejador de errores
 // Cargar variables de entorno
-configDotenv.config();
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const HOST = proces.env.HOST || "localhost";
+const HOST = process.env.HOST || "localhost";
 
 // Utilizaremmos este middleware para parsear JSOPN
 app.use(express.json());
